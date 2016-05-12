@@ -1,18 +1,17 @@
 var Q1 = alert("hello homework3") ;
-console.log("hello homework3", Q1) ;
+console.log("Hello homework3") ;
 
 function stringToInt(input) {
-    console.log("Q2: String to Integer conversion: " + parseInt(input));
+    var z = parseInt(input)
+    return z;
 }
 
 function maskNumber(input) {   
-    /*if (input == undefined || input === '') {
-		return '';
-	}
-	var pattern = /.{7}^/; // 정규식
-	return input.replace(pattern, "*******");*/
-    var mask_number = console.log("Q3: masking "+input+": " + input.replace(/\d\d\d\d\d\d\d/,"*******")) ;
-  return mask_number; 
+  
+    var mask_number = /.{3}$/;
+        
+        /*console.log("Q3: masking "+input+": " + input.replace(/\d\d\d\d\d\d\d/,"*******")) ;*/
+  return input.replace(mask_number, "***"); 
 }
  
 
@@ -25,42 +24,51 @@ function getAverage(input_array){
             sum+=input_array[i];
         }
     
-    var avg = console.log("Q4: average of input [" + input_array + "] is " +sum/input_array.length);
+    var avg = (sum/input_array.length);
     
     return avg;
 }
 
 
-function isSevenMultiple(input){
+function isMultipleSeven(input){
     if(input%7==0)
     {
-        console.log("Q5:  [" + input + "] is multiple of 7: " + true);
+        return true;
     }
     else
         {
-            console.log("Q5:  [" + input + "] is multiple of 7: " + false);
+           return false;
         }
 }
 
 
  
-function operation(a, b){
-       
-     if(isNaN(a)==true){
-        console.log("Not Supported")
+function operation(c,a, b){
+      
+  
+    var a=parseInt(a);
+        var b=parseInt(b);
+    if(c=="add"){
+            return a+b;
+        }
+    else if(c=="substract"){
+        return a-b;
+    }
+    else if(c=="multiply"){
+        return a*b;
+    }
+    else if(c=="divide"){
+        return a/b;
+    }
+    else if(c=="power"){
+        return Math.pow(a,b);
     }
     else{
-         var a=parseInt(a);
-        var b=parseInt(b);
-    console.log("Q6: a="+a+" and b="+b+". Add is: "+(a+b));
-    console.log("Q6: a="+a+" and b="+b+". Subtract is: "+(a-b));
-    console.log("Q6: a="+a+" and b="+b+". Multiply is: "+(a*b));
-    console.log("Q6: a="+a+" and b="+b+". Divide is: " +(a/b));
-    console.log("Q6: a="+a+" and b="+b+". Power is: "+(Math.pow(a,b)));
+        console.log("Not Supported.")
     }
-   
-   
 }
+   
+
 
 function triangleMtn(input){
     var star="";
@@ -73,5 +81,5 @@ function triangleMtn(input){
             star += "\n";
         }
     
-         console.log((star));
+     console.log(star);
     }
